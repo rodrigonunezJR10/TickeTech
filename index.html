@@ -3,88 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda Base - Actividad Evaluada</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>TechnoPulse - Venta de Entradas</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <header>
-    <h1>Tienda Base</h1>
+    <h1>TechnoPulse Events</h1>
     <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#quienes-somos">Quiénes somos</a>
-      <a href="#productos">Productos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#inicio" data-page="inicio">Inicio</a>
+      <a href="#quienes-somos" data-page="quienes-somos">Concepto</a>
+      <a href="#productos" data-page="productos">Tickets</a>
+      <a href="#contacto" data-page="contacto">Contacto</a>
     </nav>
   </header>
 
   <main>
-    <section id="inicio">
-      <h2>Inicio</h2>
-      <p>Sitio base para trabajar HTML, CSS, JavaScript, JSON local y formularios con envío por correo.</p>
+    <section id="inicio" class="page active">
+      <h2>Siente la Frecuencia</h2>
+      <p>Bienvenido a TechnoPulse. Conectamos a los mejores exponentes de la escena internacional del Techno con los clubes más importantes de Santiago.</p>
     </section>
 
-    <section id="quienes-somos">
-      <h2>Quiénes somos</h2>
-      <p>Somos una tienda de ejemplo. Los estudiantes deben mejorar esta sección según el caso de estudio.</p>
+    <section id="quienes-somos" class="page">
+      <h2>Nuestro Concepto</h2>
+      <p>Somos una productora y ticketera modular fundada en 2026, enfocada en difundir las distintas ramas del Techno underground, garantizando accesos seguros a eventos de nivel mundial.</p>
     </section>
 
-    <section id="productos">
-      <h2>Productos</h2>
-      <p>El producto de ejemplo se carga desde <strong>data/productos.json</strong>.</p>
+    <section id="productos" class="page">
+      <h2>Próximas Fechas</h2>
+      
+      <div id="contenedor-productos"></div>
 
-      <div id="contenedor-productos">
-        <!-- JavaScript mostrará aquí el producto desde el JSON -->
-      </div>
+      <form id="formCompra" action="https://formsubmit.co/r.nunez39@alumnos.snatotomas.cl" method="POST">
+        <h3>Reservar Tickets</h3>
+        
+        <label for="nombreCompra">Nombre Completo</label>
+        <input type="text" id="nombreCompra" name="nombre">
+        <span id="error-nombreCompra" class="error-text"></span>
 
-      <h3>Formulario de compra / boleta simple</h3>
+        <label for="correoCompra">Correo Electrónico</label>
+        <input type="email" id="correoCompra" name="email">
+        <span id="error-correoCompra" class="error-text"></span>
 
-      <form id="formCompra" action="https://formsubmit.co/TU_CORREO@EMAIL.COM" method="POST">
-        <input type="hidden" name="_subject" value="Nueva solicitud de compra">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
+        <p id="resumenCompra">No has seleccionado entradas. | Total: $0</p>
 
-        <input type="hidden" id="detalleProducto" name="detalle_producto">
+        <input type="hidden" id="detalleProducto" name="Detalle_Entradas">
+        <span id="error-productos" class="error-text"></span>
 
-        <label for="nombreCompra">Nombre cliente:</label>
-        <input type="text" id="nombreCompra" name="nombre_cliente">
-
-        <label for="correoCompra">Correo cliente:</label>
-        <input type="email" id="correoCompra" name="correo_cliente">
-
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" name="cantidad" min="1" value="1">
-
-        <p id="resumenCompra">Resumen de compra pendiente.</p>
-
-        <button type="submit">Enviar compra por correo</button>
+        <button type="submit">Confirmar Reserva de Tickets</button>
       </form>
     </section>
 
-    <section id="contacto">
-      <h2>Formulario de contacto</h2>
-
-      <form id="formContacto" action="https://formsubmit.co/TU_CORREO@EMAIL.COM" method="POST">
-        <input type="hidden" name="_subject" value="Nuevo mensaje de contacto">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-
-        <label for="nombreContacto">Nombre:</label>
+    <section id="contacto" class="page">
+      <h2>Contacto & Booking</h2>
+      
+      <form id="formContacto" action="https://formsubmit.co/r.nunez39@alumnos.snatotomas.cl" method="POST">
+        <label for="nombreContacto">Nombre</label>
         <input type="text" id="nombreContacto" name="nombre">
+        <span id="error-nombreContacto" class="error-text"></span>
 
-        <label for="correoContacto">Correo:</label>
-        <input type="email" id="correoContacto" name="correo">
+        <label for="correoContacto">Correo Electrónico</label>
+        <input type="email" id="correoContacto" name="email">
+        <span id="error-correoContacto" class="error-text"></span>
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje"></textarea>
+        <label for="mensajeContacto">Mensaje (Mínimo 20 caracteres)</label>
+        <textarea id="mensajeContacto" name="mensaje"></textarea>
+        <span id="error-mensajeContacto" class="error-text"></span>
 
-        <button type="submit">Enviar contacto</button>
+        <button type="submit">Enviar Mensaje</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>Sitio base para actividad evaluada - Programación Web</p>
+    <p>&copy; 2026 TechnoPulse Chile - Examen UMM Programación Web</p>
   </footer>
 
   <script src="js/app.js"></script>
