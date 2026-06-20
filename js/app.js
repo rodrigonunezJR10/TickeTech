@@ -251,4 +251,4 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
   // Validar formato del correo.
   // Validar cantidad mínima de caracteres en el mensaje.
   // Mostrar mensajes de error junto a cada campo.
-});
+
