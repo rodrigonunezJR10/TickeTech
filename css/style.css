@@ -2,7 +2,7 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  background-color: #090d16; /* Gris/Negro industrial de fondo */
+  background-color: #090d16;
   color: #f1f5f9;
   padding-bottom: 50px;
 }
@@ -16,7 +16,7 @@ header {
 
 header h1 {
   margin: 0 0 15px 0;
-  color: #8b5cf6; /* Púrpura eléctrico para la marca */
+  color: #8b5cf6;
   font-size: 26px;
   letter-spacing: 1px;
 }
@@ -30,19 +30,19 @@ nav a {
 }
 
 nav a:hover {
-  color: #10b981; /* Verde esmeralda neón en hover */
+  color: #10b981;
 }
 
 /* SISTEMA SPA MODULAR */
 .page {
-  display: none; /* Oculta todas las pestañas de inicio */
+  display: none;
   max-width: 850px;
   margin: 40px auto;
   padding: 20px;
 }
 
 .page.active {
-  display: block; /* Muestra instantáneamente la pestaña activa */
+  display: block;
   animation: blurIn 0.35s ease-out;
 }
 
@@ -81,7 +81,7 @@ nav a:hover {
 
 .precio-texto {
   font-size: 18px;
-  color: #10b981; /* Precio resaltado en verde neón */
+  color: #10b981;
   font-weight: bold;
 }
 
@@ -120,12 +120,12 @@ input, textarea {
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: #8b5cf6; /* El borde brilla en púrpura al tipear */
+  border-color: #8b5cf6;
 }
 
 /* TEXTOS DE ADVERTENCIA SOLICITADOS */
 .error-text {
-  color: #f87171; /* Rojo suave de advertencia */
+  color: #f87171;
   font-size: 12px;
   display: block;
   margin-bottom: 15px;
@@ -161,93 +161,85 @@ footer {
    ========================================================================== */
 @media (max-width: 600px) {
   nav a {
-    display: block; /* Muestra el menú vertical apilado en smartphones */
+    display: block;
     margin: 12px 0;
   }
   
   form {
-    padding: 20px 15px; /* Modifica los márgenes internos en pantallas pequeñas */
+    padding: 20px 15px;
   }
 }
 
-/* media query para pantallas pequeñas (celu)*/
-/* en otras palabras, el diseño se adapta a dispositivos con un ancho máximo de 600px (celular) */
-/* Estilos para pantallas de teléfonos móviles */
 @media (max-width: 768px) {
-    
-    /* Si tus elementos usan Flexbox, los ordenas en columna */
-    .contenedor-principal {
-        flex-direction: column;
-    }
+  .contenedor-principal {
+    flex-direction: column;
+  }
 
-    /* Ajusta el tamaño de la letra para que no sea gigante en el celular */
-    h1 {
-        font-size: 24px; 
-    }
+  h1 {
+    font-size: 24px; 
+  }
 
-    /* Asegura que las imágenes o tarjetas ocupen todo el ancho disponible */
-    .tarjeta-evento {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+  .tarjeta-evento {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
-/* De aqui en adelnate, el código es para la sección del creador, que es una tarjeta 
-con foto y descripción que aparece al hacer hover (pasar el mouse por arriba)*/
-
-
+/* SECCIÓN DEL CREADOR (TARJETA DE PERFIL) */
 .seccion-creador {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .tarjeta-perfil {
-    width: 300px;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width: 300px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .contenedor-foto {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .foto-creador {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la foto no se deforme */
-    transition: transform 0.5s ease;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
-/* Capa oscura que guarda el texto y está oculta inicialmente abajo */
 .capa-descripcion {
-    position: absolute;
-    bottom: -100%; /* Oculta el texto fuera de la tarjeta */
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75); /* Fondo semitransparente oscuro */
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: bottom 0.5s ease;
-    text-align: center;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: bottom 0.5s ease;
+  text-align: center;
 }
 
-/* EFECTOS HOVER (Al pasar el mouse) */
 .tarjeta-perfil:hover .capa-descripcion {
-    bottom: 0; /* Sube la descripción suavemente */
+  bottom: 0;
 }
 
 .tarjeta-perfil:hover .foto-creador {
-    transform: scale(1.1); /* Hace un pequeño zoom a la foto para dar dinamismo */
+  transform: scale(1.05);
 }
