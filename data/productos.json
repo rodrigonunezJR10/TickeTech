@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Boris Brejcha - High-Tech Minimal Live",
+    "descripcion": "El creador del High-Tech Minimal regresa con un set extendido de atmósfera oscura.",
+    "precio": 35000,
+    "stock": 12,
+    "categoria": "Melodic Techno"
+  },
+  {
+    "id": 2,
+    "nombre": "Tale Of Us - Afterlife Afterhours",
+    "descripcion": "Viaje sonoro con visuales inmersivos y el sonido vanguardista de la escena global.",
+    "precio": 45000,
+    "stock": 8,
+    "categoria": "Melodic Techno"
+  },
+  {
+    "id": 3,
+    "nombre": "Charlotte de Witte - Acid Core Session",
+    "descripcion": "Sonidos ácidos, crudos y de altos BPMs directos al subsuelo de la pista.",
+    "precio": 40000,
+    "stock": 15,
+    "categoria": "Acid Techno"
+  },
+  {
+    "id": 4,
+    "nombre": "Nico Moreno - Industrial Hard Experience",
+    "descripcion": "Líneas de bajo industriales y ritmos demoledores sobre los 150 BPM.",
+    "precio": 30000,
+    "stock": 6,
+    "categoria": "Hard Techno"
+  }
+]
