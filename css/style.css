@@ -169,3 +169,25 @@ footer {
     padding: 20px 15px; /* Modifica los márgenes internos en pantallas pequeñas */
   }
 }
+
+/* media query para pantallas pequeñas (celu)*/
+/* en otras palabras, el diseño se adapta a dispositivos con un ancho máximo de 600px (celular) */
+/* Estilos para pantallas de teléfonos móviles */
+@media (max-width: 768px) {
+    
+    /* Si tus elementos usan Flexbox, los ordenas en columna */
+    .contenedor-principal {
+        flex-direction: column;
+    }
+
+    /* Ajusta el tamaño de la letra para que no sea gigante en el celular */
+    h1 {
+        font-size: 24px; 
+    }
+
+    /* Asegura que las imágenes o tarjetas ocupen todo el ancho disponible */
+    .tarjeta-evento {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
