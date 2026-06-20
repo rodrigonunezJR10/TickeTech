@@ -1,5 +1,5 @@
 // Archivo base para estudiantes.
-// Objetivo: cargar productos desde JSON, mostrar un producto y validar formularios de forma básica.
+// Objetivo: cargar djs desde JSON, mostrar un producto y validar formularios de forma básica.
 
 let eventosDisponibles = [];
 
@@ -39,20 +39,20 @@ enlaces.forEach(enlace => {
 //  el archivo JSON sea manejado de forma segura sin afectar la experiencia del usuario.
 
 
-fetch('data/eventos.json')
+fetch('data/djs.json')
   .then(r => r.json())
   .then(datos => {
     eventosDisponibles = datos;
     mostrarEventos(datos); 
   })
-  .catch(err => console.error("Error al inicializar la base de eventos:", err));
+  .catch(err => console.error("Error al inicializar la base de djs:", err));
 
 
 // 3. RENDERIZACIÓN SEGURA DE TARJETAS
 
 
 function mostrarEventos(lista) {
-  const contenedor = document.getElementById('contenedor-productos');
+  const contenedor = document.getElementById('contenedor-djs');
   contenedor.textContent = ''; // Limpieza controlada y segura del espacio
 
   lista.forEach(evento => {
@@ -194,12 +194,12 @@ document.getElementById('formCompra').addEventListener('submit', function(e) {
   });
 
   if (totalTicketsSeleccionados === 0) {
-    document.getElementById('error-productos').textContent = 'Debes añadir al menos un ticket para procesar el pedido.';
+    document.getElementById('error-djs').textContent = 'Debes añadir al menos un ticket para procesar el pedido.';
     hayError = true;
   }
 
   if (stockExcedido) {
-    document.getElementById('error-productos').textContent = 'Una o más selecciones exceden las preventas físicas disponibles.';
+    document.getElementById('error-djs').textContent = 'Una o más selecciones exceden las preventas físicas disponibles.';
     hayError = true;
   }
 
