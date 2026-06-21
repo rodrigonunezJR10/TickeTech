@@ -267,6 +267,11 @@ footer {
   box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
   z-index: 99999 !important;
   transition: all 0.3s ease;
+  .boton-musica {
+ 
+  cursor: pointer;
+  user-select: none; /* Evita que se seleccione el texto del botóncito de musica al arrastrarlo */
+}
 }
 
 .boton-musica:hover {

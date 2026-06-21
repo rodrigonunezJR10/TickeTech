@@ -16,3 +16,25 @@ El sitio funciona bajo la arquitectura de una **Single Page Application (SPA)** 
 * **Contacto & Booking:** Formulario integrado con validaciones nativas.
 * **Desarrollador:** Sección dedicada al autor del proyecto con una tarjeta de perfil interactiva (efecto hover).
 
+### 🎵 Características Especiales:
+* **Diseño Responsivo:** Adaptabilidad garantizada en dispositivos móviles mediante Media Queries avanzadas.
+* **Música de Fondo Integrada:** Un reproductor musical flotante interactivo (Play/Pause) para ambientar la navegación con ritmos electrónicos.
+* **Interactividad Avanzada:** Efectos visuales de desenfoque (`blurIn`) al cambiar de pestaña y transformaciones CSS dinámicas en las tarjetas.
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+TickeTech/
+│
+├── css/
+│   └── style.css          # Estilos generales, paleta Techno y Media Queries
+├── js/
+│   └── app.js             # Lógica del sistema SPA, carrito de tickets y reproductor
+├── data/
+│   ├── djs.json           # Estructura de datos de los eventos
+│   └── track.mp3          # Archivo de audio para la música de fondo
+├── Imagen/
+│   └── mifot.jpg.jpeg     # Fotografía del desarrollador
+└── index.html             # Estructura HTML5 base del sitio web
