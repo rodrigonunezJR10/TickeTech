@@ -315,3 +315,14 @@ if (btnMusica && musica) {
         }
     });
 }
+// REPRODUCCIÓN AUTOMÁTICA EN EL PRIMER CLIC DE LA PÁGINA (Para evitar el bloqueo del navegador)
+document.addEventListener('click', () => {
+    if (musica.paused && !btnMusica.classList.contains('reproduciendo')) {
+        musica.play()
+            .then(() => {
+                btnMusica.textContent = '⏸ Pause';
+                btnMusica.classList.add('reproduciendo');
+            })
+            .catch(err => console.log("Autoplay esperando interacción..."));
+    }
+}, { once: true }); // '{ once: true }' asegura que este detector se borre después del primer clic
