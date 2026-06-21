@@ -253,25 +253,21 @@ footer {
 /* REPRODUCCTOR DE MÚSICA FLOTANTE */
 .boton-musica {
   position: fixed !important;
-  bottom: 20px !important;
-  right: 20px !important;
-  width: auto !important;
-  max-width: 180px !important;
+  bottom: 20px;
+  right: 20px;
+  width: 160px !important;       /* Ancho fijo para que no se deforme */
+  height: 45px !important;       /* Alto fijo para mantener proporciones */
+  white-space: nowrap !important; /* Evita que el texto se divida en dos líneas */
   background-color: #10b981;
   color: #090d16;
   border: none;
-  padding: 10px 20px;
   border-radius: 50px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
   z-index: 99999 !important;
-  transition: all 0.3s ease;
-  .boton-musica {
- 
-  cursor: pointer;
-  user-select: none; /* Evita que se seleccione el texto del botóncito de musica al arrastrarlo */
-}
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Quitamos 'all' para que no interfiera con el arrastre */
+  user-select: none;
 }
 
 .boton-musica:hover {
