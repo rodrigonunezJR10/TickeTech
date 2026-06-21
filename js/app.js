@@ -140,9 +140,9 @@ function actualizarBoletaEventos() {
     }
   });
 
-  // Estructura del string de la boleta
+  // Estructura del string de la boleta (Corregido totalDinero)
   const stringBoleta = lineasPedido.length > 0 
-    ? `${lineasPedido.join(', ')} | Total a Pagar: $${totalGeneral}`
+    ? `${lineasPedido.join(', ')} | Total a Pagar: $${totalDinero}`
     : 'No has seleccionado entradas. | Total: $0';
 
   // Inyectamos el texto plano al párrafo visual y al campo oculto del email
@@ -252,42 +252,66 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
     e.preventDefault();
   }
 });
-// LÓGICA PARA ARRASTRAR EL BOTÓN DE MÚSICA
-const btnFlotante = document.getElementById('btn-musica');
 
-if (btnFlotante) {
+
+// ==========================================================================
+// 7. REPRODUCTOR DE MÚSICA INTERACTIVO Y ARRASTRABLE (UNIFICADO)
+// ==========================================================================
+const musica = document.getElementById('musica-fondo');
+const btnMusica = document.getElementById('btn-musica');
+
+if (btnMusica && musica) {
     let mousePresionado = false;
     let despliegueX = 0, despliegueY = 0;
+    let seArrastro = false; 
 
-    btnFlotante.addEventListener('mousedown', (e) => {
+    // Detectar clic inicial y guardar posición
+    btnMusica.addEventListener('mousedown', (e) => {
         mousePresionado = true;
-        // Calcula la distancia entre el mouse y las esquinas del botón
-        despliegueX = e.clientX - btnFlotante.offsetLeft;
-        despliegueY = e.clientY - btnFlotante.offsetTop;
-        btnFlotante.style.cursor = 'grabbing';
+        seArrastro = false; 
+        despliegueX = e.clientX - btnMusica.offsetLeft;
+        despliegueY = e.clientY - btnMusica.offsetTop;
+        btnMusica.style.cursor = 'grabbing';
     });
 
+    // Controlar el movimiento en pantalla
     document.addEventListener('mousemove', (e) => {
         if (!mousePresionado) return;
         e.preventDefault();
-        
-        // Calcula la nueva posición en la pantalla
+        seArrastro = true; 
+
         let nuevaX = e.clientX - despliegueX;
         let nuevaY = e.clientY - despliegueY;
 
-        // Aplica la nueva posición rompiendo los valores fijos por defecto
-        btnFlotante.style.left = nuevaX + 'px';
-        btnFlotante.style.top = nuevaY + 'px';
-        btnFlotante.style.bottom = 'auto';
-        btnFlotante.style.right = 'auto';
+        btnMusica.style.left = nuevaX + 'px';
+        btnMusica.style.top = nuevaY + 'px';
+        btnMusica.style.bottom = 'auto';
+        btnMusica.style.right = 'auto';
     });
 
+    // Soltar el mouse
     document.addEventListener('mouseup', () => {
         mousePresionado = false;
-        if (btnFlotante) btnFlotante.style.cursor = 'pointer';
+        if (btnMusica) btnMusica.style.cursor = 'pointer';
+    });
+
+    // Reproducir/Pausar música (Solo si el botón NO se arrastró)
+    btnMusica.addEventListener('click', () => {
+        if (seArrastro) return; 
+
+        if (musica.paused) {
+            musica.play()
+                .then(() => {
+                    btnMusica.textContent = '⏸ Pause';
+                    btnMusica.classList.add('reproduciendo');
+                })
+                .catch(err => {
+                    console.error("Error de reproducción:", err);
+                });
+        } else {
+            musica.pause();
+            btnMusica.textContent = '🎵 Play Adriatique';
+            btnMusica.classList.remove('reproduciendo');
+        }
     });
 }
-  // TODO estudiante:
-  // Validar formato del correo.
-  // Validar cantidad mínima de caracteres en el mensaje.
-  // Mostrar mensajes de error junto a cada campo.
