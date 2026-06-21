@@ -1,16 +1,18 @@
 [
   {
     "id": 1,
-    "nombre": "Boris Brejcha - High-Tech Minimal Live",
-    "descripcion": "El creador del High-Tech Minimal regresa con un set extendido de atmósfera oscura.",
-    "precio": 35000,
-    "stock": 12,
-    "categoria": "Melodic Techno"
+    "nombre": "Adriatique - Deep Techno Experience",
+    "descripcion": " Una experiencia profunda de techno con un viaje sonoro que te sumerge en la oscuridad y la intensidad del ritmo.",
+    "fecha": "2026-07-06",
+    "precio": 60000,
+    "stock": 6,
+    "categoria": "Hard Techno"
   },
   {
     "id": 2,
     "nombre": "Tale Of Us - Afterlife Afterhours",
     "descripcion": "Viaje sonoro con visuales inmersivos y el sonido vanguardista de la escena global.",
+    "fecha": "2026-08-16",
     "precio": 45000,
     "stock": 8,
     "categoria": "Melodic Techno"
@@ -19,16 +21,45 @@
     "id": 3,
     "nombre": "Charlotte de Witte - Acid Core Session",
     "descripcion": "Sonidos ácidos, crudos y de altos BPMs directos al subsuelo de la pista.",
+    "fecha": "2026-09-20",
     "precio": 40000,
     "stock": 15,
     "categoria": "Acid Techno"
   },
+  {"id": 4,
+    "nombre": "kuko - Techno Underground Vibes",
+    "descripcion": "Un viaje underground en el mundo del techno con sonidos innovadores y una atmósfera única.",
+    "fecha": "2026-10-10",
+    "precio": 50000,
+    "stock": 10,
+    "categoria": "Underground Techno"
+  },
   {
-    "id": 4,
-    "nombre": "Nico Moreno - Industrial Hard Experience",
-    "descripcion": "Líneas de bajo industriales y ritmos demoledores sobre los 150 BPM.",
-    "precio": 30000,
-    "stock": 6,
-    "categoria": "Hard Techno"
+    "id": 5,
+    "nombre": "Amelie Lens - Psychedelic Techno Journey",
+    "descripcion": "Un viaje psicodélico con capas de sonido hipnótico y ritmos envolventes.",
+    "fecha": "2026-11-15",
+    "precio": 60000,
+    "stock": 10,
+    "categoria": "Psychedelic Techno"
+    
+  },
+  {
+    "id": 6,
+    "nombre": "Adam Beyer - Drumcode Techno Takeover",
+    "descripcion": "El fundador de Drumcode presenta un set con lo mejor del techno contemporáneo.",
+    "fecha": "2026-12-11",
+    "precio": 45000,
+    "stock": 5,
+    "categoria": "Techno Contemporáneo"
+  },
+  {
+    "id": 7,
+    "nombre": "Jonams B2B LVNTT - house groove session",
+    "descripcion": "Una sesión de groove house con un back-to-back explosivo entre dos talentos emergentes.",
+    "fecha": "2027-02-20",
+    "precio": 20000,
+    "stock": 150,
+    "categoria": "House"
   }
 ]

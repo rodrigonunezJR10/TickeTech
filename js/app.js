@@ -70,6 +70,10 @@ function mostrarEventos(lista) {
     const desc = document.createElement('p');
     desc.textContent = evento.descripcion;
 
+    const fecha = document.createElement('p');
+    fecha.className = 'fecha-texto';
+    fecha.textContent = `Fecha: ${evento.fecha}`;
+
     const precio = document.createElement('p');
     precio.className = 'precio-texto';
     precio.textContent = `Ticket: $${evento.precio}`;
@@ -78,6 +82,7 @@ function mostrarEventos(lista) {
     stock.className = 'stock-texto';
     stock.textContent = `Preventas Disponibles: ${evento.stock}`;
 
+  
     // Entrada numérica de tickets
     const labelCant = document.createElement('label');
     labelCant.textContent = 'Cantidad de tickets: ';
@@ -99,6 +104,7 @@ function mostrarEventos(lista) {
     card.appendChild(desc);
     card.appendChild(precio);
     card.appendChild(stock);
+    card.appendChild(fecha);
     card.appendChild(labelCant);
     card.appendChild(inputCant);
 
