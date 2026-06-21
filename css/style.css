@@ -243,3 +243,9 @@ footer {
 .tarjeta-perfil:hover .foto-creador {
   transform: scale(1.05);
 }
+
+/* Centrar los títulos principales de cada pestaña */
+.page h2 {
+  text-align: center;
+  margin-bottom: 30px; /* Un espacio opcional abajo para darle mejor lectura */
+}
