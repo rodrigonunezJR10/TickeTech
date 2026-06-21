@@ -252,7 +252,41 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
     e.preventDefault();
   }
 });
+// LÓGICA PARA ARRASTRAR EL BOTÓN DE MÚSICA
+const btnFlotante = document.getElementById('btn-musica');
 
+if (btnFlotante) {
+    let mousePresionado = false;
+    let despliegueX = 0, despliegueY = 0;
+
+    btnFlotante.addEventListener('mousedown', (e) => {
+        mousePresionado = true;
+        // Calcula la distancia entre el mouse y las esquinas del botón
+        despliegueX = e.clientX - btnFlotante.offsetLeft;
+        despliegueY = e.clientY - btnFlotante.offsetTop;
+        btnFlotante.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!mousePresionado) return;
+        e.preventDefault();
+        
+        // Calcula la nueva posición en la pantalla
+        let nuevaX = e.clientX - despliegueX;
+        let nuevaY = e.clientY - despliegueY;
+
+        // Aplica la nueva posición rompiendo los valores fijos por defecto
+        btnFlotante.style.left = nuevaX + 'px';
+        btnFlotante.style.top = nuevaY + 'px';
+        btnFlotante.style.bottom = 'auto';
+        btnFlotante.style.right = 'auto';
+    });
+
+    document.addEventListener('mouseup', () => {
+        mousePresionado = false;
+        if (btnFlotante) btnFlotante.style.cursor = 'pointer';
+    });
+}
   // TODO estudiante:
   // Validar formato del correo.
   // Validar cantidad mínima de caracteres en el mensaje.
