@@ -27,7 +27,7 @@
 
     <section id="quienes-somos" class="page">
       <h2>Nuestro Concepto</h2>
-      <p>Somos una productora y ticketera modular fundada en 2026, por Rodrigo Nuñez (Brrrrrr)  enfocada en difundir las distintas ramas del Techno underground, garantizando accesos seguros a eventos de nivel mundial.</p>
+      <p>Somos una productora y ticketera modular fundada en 2026, por Rodrigo Nuñez (Brrrrrr) enfocada en difundir las distintas ramas del Techno underground, generando accesos seguros a eventos de nivel mundial.</p>
       <p>2026</p>
     </section>
 
@@ -38,6 +38,10 @@
 
       <form id="formCompra" action="https://formsubmit.co/r.nunez39@alumnos.santotomas.cl" method="POST">
         <h3>Reservar Tickets</h3>
+
+        <!-- Redirección dinámica y configuración de control para FormSubmit -->
+        <input type="hidden" name="_next" value="https://rodrigonunezJR10.github.io/TickeTech/gracias.html">
+        <input type="hidden" name="_captcha" value="false">
         
         <label for="nombreCompra">Nombre Completo</label>
         <input type="text" id="nombreCompra" name="nombre">
@@ -60,6 +64,11 @@
       <h2>Contacto & Booking</h2>
       
       <form id="formContacto" action="https://formsubmit.co/r.nunez39@alumnos.santotomas.cl" method="POST">
+        
+        <!-- Redirección dinámica y configuración de control para FormSubmit -->
+        <input type="hidden" name="_next" value="https://rodrigonunezJR10.github.io/TickeTech/gracias.html">
+        <input type="hidden" name="_captcha" value="false">
+
         <label for="nombreContacto">Nombre</label>
         <input type="text" id="nombreContacto" name="nombre">
         <span id="error-nombreContacto" class="error-text"></span>
@@ -78,7 +87,7 @@
 
     <section id="Desarrollador" class="page">
       <h2>Desarrollador</h2>
-      <p>Este sitio web fue desarrollado por Rodrigo Núñez Canning como parte de su examen final del curso de Programación Web en el Instituto Santo Tomás. El objetivo del proyecto es demostrar habilidades en desarrollo web, incluyendo HTML, CSS, JavaScript y manejo de datos.</p>
+      <p>Este sitio web fue desarrollado por Rodrigo Núñez Canning como parte de su examen final del curso de Programación Web en el Instituto Santo Tomás[cite: 1, 2]. El objetivo del proyecto es demostrar habilidades en desarrollo web, incluyendo HTML, CSS, JavaScript y manejo de datos.</p>
       <p>Aprovechando mi gusto musical, les dejo algo de música electrónica para que disfruten mientras navegan por el sitio.</p>
       
       <div class="seccion-creador">
@@ -96,7 +105,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 TickeTech Chile - Examen UMM Programación Web</p>
+    <p>&copy; 2026 TickeTech Chile - Evaluacion UMM Programación Web</p>
   </footer>
 
   <audio id="musica-fondo" loop>
@@ -104,7 +113,7 @@
     Tu navegador no soporta el elemento de audio.
   </audio>
 
-  <button id="btn-musica" class="boton-musica">🎵 Play Adriatique</button>
+  <button id="btn-musica" class="boton-musica">🎵 Play</button>
 
   <script src="js/app.js"></script>
 </body>
